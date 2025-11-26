@@ -54,7 +54,7 @@ config() {
 				value=$(echo "${line#*=}" | sed "s/^['\"]\(.*\)['\"]$/\1/");
 			fi
 			if ! [[ -v "${key}" ]]; then
-				export "${key}=${value}";
+				export "${key} = ${value}";
 			fi
 		done < "${file}";
 	fi
